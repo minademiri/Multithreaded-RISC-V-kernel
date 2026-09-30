@@ -55,3 +55,25 @@ The project implements core operating-system mechanisms including dynamic memory
 │
 ├── Makefile
 └── kernel.ld
+```
+
+## Architecture
+
+The kernel is organized into several layers:
+
+1. **System-call API** – C and C++ interfaces available to user code.
+2. **Kernel services** – memory management, threads, scheduling, and semaphores.
+3. **RISC-V trap handling** – handles system calls, exceptions, and interrupts.
+4. **Low-level context switching** – implemented directly in RISC-V assembly.
+
+User threads execute in unprivileged mode and enter the kernel through system calls.
+
+Thread scheduling is cooperative: a context switch occurs when a thread explicitly dispatches, blocks on synchronization, or terminates.
+
+## Technologies
+
+- C++
+- RISC-V Assembly
+- RISC-V GNU Toolchain
+- QEMU
+- GDB
