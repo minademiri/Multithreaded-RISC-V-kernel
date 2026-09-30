@@ -1,0 +1,14 @@
+build/
+.idea/
+kernel
+kernel.asm
+*.o
+*.d
+*.lst
+
+lib/
+test/
+src/userMain.cpp
+src/uputstvo.txt
+src/trap.S
+src/contextSwitch.S
